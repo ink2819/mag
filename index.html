@@ -105,38 +105,29 @@
         text-align: center;
       }
 
-
       .sidebar nav ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 1em;
-        align-items: flex-start;
       }
 
       .sidebar nav li {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
 
-      /* Make submenu participate in document flow so it can push to the next line */
       .sidebar ul ul {
-        position: static;
+        position: absolute;
         background-color: #c77985;
-        margin-top: 0.5em;
+        top: 100%;
+        left: 0;
+        width: max-content;
         padding: 0.5em;
-        width: 100%;
-        display: none;
+        z-index: 1000;
         text-align: left;
-        border-radius: 4px;
       }
 
-      /* Support hover and keyboard focus (useful on touch when focused)
-         This will reveal the submenu in-flow, causing it to appear on its own line */
-      .sidebar li:hover > ul,
-      .sidebar li:focus-within > ul {
+      .sidebar li:hover > ul {
         display: block;
       }
 

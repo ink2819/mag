@@ -28,6 +28,14 @@
     font-style: italic;
   }
 
+  .book-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 2em;
+  }
 
   .container {
     display: flex;
@@ -91,32 +99,24 @@
 
     .sidebar nav ul {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5em;
-      align-items: flex-start;
-    }
-
-    .sidebar nav li {
-      position: relative;
-      display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0.5em;
     }
 
     .sidebar ul ul {
-      position: static;
+      position: absolute;
       background-color: #c6717d;
-      margin-top: 0.5em;
       padding: 0.5em;
-      width: 100%;
-      display: none;
-      text-align: left;
-      border-radius: 4px;
+      top: 100%;
+      z-index: 10;
     }
 
-    .sidebar li:hover > ul,
-    .sidebar li:focus-within > ul {
+    .sidebar li {
+      position: relative;
+    }
+
+    .sidebar li:hover > ul {
       display: block;
     }
 
