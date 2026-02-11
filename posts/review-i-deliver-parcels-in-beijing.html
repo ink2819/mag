@@ -99,24 +99,32 @@
 
     .sidebar nav ul {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5em;
+      align-items: flex-start;
+    }
+
+    .sidebar nav li {
+      position: relative;
+      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5em;
     }
 
     .sidebar ul ul {
-      position: absolute;
+      position: static;
       background-color: #c6717d;
+      margin-top: 0.5em;
       padding: 0.5em;
-      top: 100%;
-      z-index: 10;
+      width: 100%;
+      display: none;
+      text-align: left;
+      border-radius: 4px;
     }
 
-    .sidebar li {
-      position: relative;
-    }
-
-    .sidebar li:hover > ul {
+    .sidebar li:hover > ul,
+    .sidebar li:focus-within > ul {
       display: block;
     }
 
