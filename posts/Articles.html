@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Articles - Accent Accent Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    /* === BASE TEMPLATE (same as index) === */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #D58A94;
+      padding: 20px;
+      color: white;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sidebar h1 {
+      font-size: 28px;
+      margin-bottom: 1em;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul ul {
+      margin-left: 1em;
+      display: none;
+    }
+
+    .sidebar li:hover > ul {
+      display: block;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 6px 0;
+    }
+
+    .content-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      padding: 2em;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    a {
+      color: #D58A94;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2em 0;
+    }
+
+    /* === ARTICLES LIST === */
+    .article-entry {
+      display: flex;
+      gap: 1.5em;
+      align-items: flex-start;
+    }
+
+    .article-entry img {
+      width: 160px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .article-info a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2em;
+      text-decoration: none;
+    }
+
+    .article-meta {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 0.25em;
+    }
+
+    /* === MOBILE === */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        text-align: center;
+      }
+
+      .sidebar nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+      }
+
+      .sidebar ul ul {
+        position: absolute;
+        background-color: #c77985;
+        padding: 0.5em;
+      }
+
+      /* Hide the Articles submenu entirely on small screens */
+      .sidebar ul ul {
+        display: none !important;
+      }
+
+      .article-entry {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .article-entry img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h1>Accent Accent Magazine</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">About</a></li>
+          <li><a href="articles.html">Articles</a>
+            <ul>
+              <li><a href="./review-i-deliver-parcels-in-beijing.html">I Deliver Parcels in Beijing</a></li>
+              <li><a href="./review-time-ruines-in-a-very-cold-winter.html">A Very Cold Winter</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+      <main class="content">
+        <h1>Articles</h1>
+
+        <div class="article-entry">
+          <img src="../images/i-deliver-parcels-in-beijing.webp" alt="">
+          <div class="article-info">
+            <a href="./review-i-deliver-parcels-in-beijing.html">
+              The Narrative Disruptions of “I Deliver Parcels in Beijing”
+            </a>
+            <div class="article-meta">December 5, 2025 · Annelie Hyatt</div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="article-entry">
+          <img src="../images/a-very-cold-winter.jpg" alt="">
+          <div class="article-info">
+            <a href="./review-time-ruines-in-a-very-cold-winter.html">
+              Time Ruins in “A Very Cold Winter”
+            </a>
+            <div class="article-meta">February 10, 2026 · Annelie Hyatt</div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+</body>
+</html>
